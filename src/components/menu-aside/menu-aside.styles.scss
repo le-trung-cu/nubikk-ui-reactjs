@@ -1,0 +1,37 @@
+.menu-aside {
+  width: 250px;
+  background-color: #f4f4f4;
+  flex-shrink: 0;
+  margin-left: -250px;
+  transition: all 0.3s;
+
+  &.show--menu-aside {
+    margin-left: 0;
+  }
+  &.show--right-aside {
+    margin-left: -650px;
+  }
+}
+
+.menu__nav {
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  overflow-y: auto;
+
+  .close-btn {
+    left: 0;
+  }
+}
+
+.menu__group {
+  height: 1000px;
+}
+
+@media screen and (max-width: 400px) {
+  .menu-aside {
+    &.show--right-aside {
+      margin-left: calc(-100% - 250px);
+    }
+  }
+}

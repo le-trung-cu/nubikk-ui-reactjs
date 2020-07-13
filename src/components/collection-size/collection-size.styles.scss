@@ -1,0 +1,38 @@
+.collection-size {
+    display: flex;
+    flex-wrap: wrap;
+    button {
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+        border-radius: 100%;
+        width: 23px;
+        height: 23px;
+        line-height: 16px;
+        transition: all 500ms;
+        font-size: 12px;
+    }
+    .in-of:hover {
+        background-color: #000;
+        color: #fff;
+    }
+    .out-of {
+        color: darkgray;
+        position: relative;
+
+        &::before {
+            content: "";
+            display: block;
+            width: 25px;
+            height: 1px;
+            background-color: #ccc;
+            position: absolute;
+            transform: rotateZ(-45deg);
+        }
+    }
+    li:not(:last-child) {
+        margin-right: 12px;
+    }
+}

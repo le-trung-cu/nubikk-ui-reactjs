@@ -1,0 +1,23 @@
+.order-detail {
+    padding-top: 50px;
+    margin-bottom: 30px;
+    &__table {
+        margin: auto;
+    }
+
+    table {
+        border-collapse: collapse;
+    }
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        vertical-align: middle;
+        text-align: center;
+        padding: 10px;
+    }
+
+    img {
+        width: 100px;
+    }
+}

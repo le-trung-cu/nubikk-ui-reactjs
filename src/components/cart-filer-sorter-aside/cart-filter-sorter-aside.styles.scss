@@ -1,0 +1,22 @@
+.cart-filter-sort-aside {
+    width: 400px;
+    background-color: #f4f4f4;
+    flex-shrink: 0;
+    transition: all 0.3s;
+
+    &__content {
+        background: #f4f4f4;
+        position: fixed;
+        height: 100vh;
+        overflow-y: auto;
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .cart-filter-sort-aside {
+        &__content {
+            width: 100%;
+        }
+    }
+}

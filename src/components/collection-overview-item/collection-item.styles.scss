@@ -1,0 +1,85 @@
+.collection {
+    &__wrap {
+        width: calc(100% / 3);
+        padding: 40px;
+    }
+    &__box {
+        position: relative;
+    }
+    .card {
+        &--hover {
+        }
+        &__photo-box {
+            position: relative;
+        }
+    }
+    .name {
+    }
+
+    .price {
+        line-height: 1.15;
+        font-family: "MontserratNub", Helvetica, Arial, sans-serif;
+        letter-spacing: 0.03rem;
+        text-align: left;
+        text-transform: uppercase;
+        white-space: nowrap;
+        color: #000;
+        font-size: 0.75rem;
+    }
+    .size {
+    }
+    .detail {
+    }
+    .label {
+        font-family: "MontserratNub", Helvetica, Arial, sans-serif;
+        letter-spacing: 0.03rem;
+        -webkit-user-select: none;
+        user-select: none;
+        position: absolute;
+        top: auto;
+        right: auto;
+        z-index: 2;
+        text-transform: uppercase;
+        color: #555555;
+        bottom: 10px;
+        left: 10px;
+        font-size: 0.75rem;
+        background-color: #ccc;
+        padding: 5px 7px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .collection {
+        &__wrap {
+            padding: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 675px) {
+    .collection {
+        &__wrap {
+            width: calc(100% / 2);
+            padding: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .collection {
+        &__wrap {
+            width: 100%;
+            padding: 20px 40px;
+        }
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .collection {
+        &__wrap {
+            width: 100%;
+            padding: 20px;
+        }
+    }
+}

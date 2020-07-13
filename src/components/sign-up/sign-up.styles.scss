@@ -1,0 +1,19 @@
+.sign-up {
+    &__password {
+        transition: all 0.4s;
+        transform: scaleY(0);
+        transform-origin: top;
+        margin-bottom: -75px;
+        &.show {
+            transform: scaleY(1);
+            margin-bottom: 0px;
+        }
+    }
+    &__option {
+        margin-bottom: 14px;
+        display: block;
+    }
+}
+.margin-top-10 {
+    margin-top: 10px;
+}

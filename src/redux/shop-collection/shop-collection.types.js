@@ -1,0 +1,9 @@
+const ShopCollectionActionTypes = {
+    // FETCHING_COLLECTIONS: 'FETCHING_COLLECTIONS',
+    // FETCH_COLLECTIONS_SUCCESS: 'FETCH_COLLECTIONS_SUCCESS',
+    // FETCH_COLLECTIONS_FAIL: 'FETCH_COLLECTIONS_FAIL'
+
+    SET_COLLECTIONS: 'SET_COLLECTIONS_ShopCollectionActionTypes'
+};
+
+export default ShopCollectionActionTypes;

@@ -1,0 +1,57 @@
+.btn {
+    background-color: #292928;
+    color: #fff;
+    padding: 8px 16px;
+    transition: all 0.1s;
+    cursor: pointer;
+    text-decoration: none;
+
+    &--header {
+        padding: 12px 24px;
+        font-size: 1.125rem;
+        text-align: center;
+        background-color: #eee;
+        color: #000;
+    }
+
+    &--hover:hover {
+        background-color: #52bc00;
+    }
+}
+
+.btn-group-vertical {
+    display: inline-block;
+    & > .btn {
+        display: block;
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.btn--main {
+    display: block;
+    width: 100%;
+    height: 60px;
+    background: transparent;
+    color: #999;
+    font-size: 24px;
+    font-weight: 300;
+    font-family: "Montserrat", sans-serif;
+    border: 1px solid;
+    transition: all 0.1s;
+    margin-top: 40px;
+    &:hover {
+        border-color: #52bc00;
+        color: #52bc00;
+    }
+}
+
+.btn--background {
+    background-color: #000;
+    color: #fff;
+    &:hover {
+        background-color: #52bc00;
+        color: #fff;
+    }
+}

@@ -1,0 +1,31 @@
+.category-item {
+    align-items: center;
+    width: 25%;
+    user-select: none;
+    &__rotation {
+        padding-top: calc(100% * 475 / 298);
+        figure {
+            margin-top: calc(-100% * 475 / 298);
+        }
+    }
+    .photo {
+        width: 100%;
+        padding: 7px;
+        user-select: none;
+        pointer-events: none;
+    }
+    .name {
+        line-height: 1.15;
+        color: #000;
+        padding-bottom: 0;
+        padding-top: 0.5rem;
+        padding-left: 0.25rem;
+        padding-right: 0.25rem;
+        text-align: center;
+        text-transform: uppercase;
+        font-family: "D-DIN Condensed", Helvetica, Arial, sans-serif;
+        font-weight: bold;
+        letter-spacing: 3px;
+        font-size: 1.25rem;
+    }
+}

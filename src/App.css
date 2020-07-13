@@ -1,0 +1,11 @@
+.wrap {
+  display: flex;
+  overflow: hidden;
+}
+.main {
+  margin-top: 50px;
+}
+.container {
+  width: 100%;
+  flex-shrink: 0;
+}

@@ -1,0 +1,33 @@
+.input {
+    &-group {
+        margin-bottom: 20px;
+    }
+    height: 40px;
+    border: 1px solid #ccc;
+    padding: 8px;
+    flex-grow: 1;
+    margin-right: 20px;
+    font-size: 100%;
+    font-family: "MontserratNub", Helvetica, Arial, sans-serif;
+    transition: all 0.3s;
+    display: block;
+    width: 100%;
+
+    &:focus {
+        outline: none;
+        border-color: #000;
+    }
+
+    &-label {
+        margin-bottom: 5px;
+        line-height: 1.15;
+        font-style: normal;
+        letter-spacing: 0.03rem;
+        cursor: pointer;
+        display: block;
+        font-weight: 300;
+        color: #999;
+        margin-bottom: 0.5rem;
+        font-size: 20px;
+    }
+}
