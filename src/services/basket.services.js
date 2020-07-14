@@ -1,6 +1,9 @@
 import userServices from "./user.services";
 import { toast } from "react-toastify";
-const www = 'http://localhost:5001';
+import www from "./rotwww";
+// const www = 'http://localhost:5001';
+// const www = 'https://pacific-shore-97621.herokuapp.com/';
+
 const getHeaders = () => ({
     'Accept': 'application/json',
     'Content-Type': 'application/json',
@@ -8,7 +11,7 @@ const getHeaders = () => ({
 });
 
 export const addItemToBasketService = ({ productId, size, color, quantity = 1 }) => {
-    const url = `${www}/api/basket/addItem`;
+    const url = `${www}/basket/addItem`;
     console.log(getHeaders())
     const data = { productId, size, color, quantity }
 
@@ -28,7 +31,7 @@ export const addItemToBasketService = ({ productId, size, color, quantity = 1 })
 
 export const setQuantityToBasketItemService = ({ basketItemId, quantity }) => {
     const data = { basketItemId, quantity }
-    const url = `${www}/api/basket`;
+    const url = `${www}/basket`;
     return fetch(url, {
         method: 'PUT',
         headers: getHeaders(),
@@ -51,7 +54,7 @@ export const clearBasketItemService = (basketItemId) => {
 
 
 export const fetchCountService = () => {
-    const url = `${www}/api/buyer/${userServices.uid}/basket`;
+    const url = `${www}/buyer/${userServices.uid}/basket`;
     fetch(url, {
         method: 'GET',
         headers: getHeaders(),
@@ -59,7 +62,7 @@ export const fetchCountService = () => {
 }
 
 export const fetchBasketService = () => {
-    const url = `${www}/api/basket`;
+    const url = `${www}/basket`;
     return fetch(url, {
         method: 'GET',
         headers: getHeaders(),
@@ -67,7 +70,7 @@ export const fetchBasketService = () => {
 };
 
 export const getCountService = () => {
-    const url = `/api/buyer/${userServices.uid}/basket/count`;
+    const url = `${www}/buyer/${userServices.uid}/basket/count`;
     return fetch(url, {
         method: 'GET',
         headers: getHeaders()
@@ -75,7 +78,7 @@ export const getCountService = () => {
 };
 
 export const createBasket = (cartItems) => {
-    const url = `${www}/api/basket`;
+    const url = `${www}/basket`;
 
     const data = {
         items: cartItems.map(item => ({

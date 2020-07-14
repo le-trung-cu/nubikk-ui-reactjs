@@ -1,10 +1,10 @@
+import www from "./rotwww";
+
 const headers = {
     'Accept': 'application/json',
     'Content-Type': 'application/json',
     'Authorization': 'Basic dHJ1bmdjdUBnbWFpbC5jb206MTIzNA=='
 };
-
-const www = 'http://localhost:5001/api';
 
 export const fetchProducts = ({ sex, category, search = '' }) => {
     // let url = `${www}/products${sex}${search}`;

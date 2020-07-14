@@ -1,6 +1,6 @@
 import { toast } from "react-toastify";
+import www from "./rotwww";
 
-const www = 'http://localhost:5001';
 
 class userServices {
     constructor() {
@@ -71,7 +71,7 @@ class userServices {
 
     signInWithEmailAndPasswors(email, password) {
         // TODO signIn 
-        return fetch(`${www}/api/account/signin`, {
+        return fetch(`${www}/account/signin`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

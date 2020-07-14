@@ -8,7 +8,6 @@ import { addItemToBasketService } from '../../services/basket.services'
 import userServices from '../../services/user.services'
 
 const CollectionSize = ({ sizes, item, addItem }) => {
-    console.log(item)
     const addToCart = (size) => {
         if (userServices.user) {
             addItemToBasketService({
@@ -16,7 +15,6 @@ const CollectionSize = ({ sizes, item, addItem }) => {
                 colorName: item.colorName,
                 size
             }).then(data => {
-                console.log(data)
                 addItem(data)
             })
         } else {

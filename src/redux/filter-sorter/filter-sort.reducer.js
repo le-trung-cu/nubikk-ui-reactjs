@@ -16,7 +16,7 @@ const filterSorterReducer = (state = INITIAL_STATE, action) => {
         case FilterSorterActionTypes.CLEAR_FILTER_SORTER:
             return {
                 ...state,
-                params: {}
+                params: { colorIds: [], materialIds: [], categoryIds: [], modelIds: [], sizes: [], priceRange: [] }
             };
         case FilterSorterActionTypes.CHANGE_FILTER_SORTER:
             return {

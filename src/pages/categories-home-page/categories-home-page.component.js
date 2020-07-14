@@ -22,7 +22,7 @@ const categoriesMapImages = {
     }
 }
 
-const CategoriesHomePage = ({ sex }) => {
+const CategoriesHomePage = ({ sex, headingMain }) => {
     const [categories, setCategories] = useState([]);
 
 
@@ -48,8 +48,8 @@ const CategoriesHomePage = ({ sex }) => {
     return (
         <div className="men-home-page">
             <HeaderImage height="354px" imgUrl="/img/MEN-BANNER-1280x1280.jpg">
-                <h2>MEN</h2>
-                <Link to="/men">SHOP NEW</Link>
+                <h2>{headingMain}</h2>
+                <Link to={`/${sex}`}>VIEW SHOP</Link>
             </HeaderImage>
             <CategoryPreview sex={sex} title="shop by category" items={categories} />
         </div>

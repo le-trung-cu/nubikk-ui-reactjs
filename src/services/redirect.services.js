@@ -1,7 +1,7 @@
-const www = 'http://localhost:5001/api/redirect';
+import www from "./rotwww";
 
 export const fetchFilterSorter = ({ sex, categoryName }) => {
-    let url = www + '/filterSorter/' + sex;
+    let url = www + '/redirect/filterSorter/' + sex;
     if (categoryName) {
         url += '/' + categoryName;
     }
@@ -10,7 +10,7 @@ export const fetchFilterSorter = ({ sex, categoryName }) => {
 }
 
 export const fetchCategories = ({ sex }) => {
-    let url = www + '/categories/' + sex;
+    let url = www + '/redirect/categories/' + sex;
 
     return fetch(url).then(res => res.json())
 }

@@ -39,8 +39,8 @@ function App({ directoryHidden, toggleMenuHidden, user, setCurrentUser }) {
           <main className="main">
             <Switch>
               <Route exact path='/' component={() => <HomePage />} />
-              <Route exact path='/men-home' component={() => <CategoriesHomePage sex="men" />} />
-              <Route exact path='/women-home' component={() => <CategoriesHomePage sex="women" />} />
+              <Route exact path='/men-home' component={() => <CategoriesHomePage sex="men" headingMain="MEN" />} />
+              <Route exact path='/women-home' component={() => <CategoriesHomePage sex="women" headingMain="WOMEN" />} />
               <Route exact path='/checkout' component={() => <CheckoutPage />} />
               <Route exact path='/orders' component={() => <OrderPage />} />
               <Route exact path='/sign-in'>

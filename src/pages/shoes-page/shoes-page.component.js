@@ -7,15 +7,17 @@ import { setCollectionItems } from '../../redux/shop-collection/shop-collection.
 import { useHistory, useParams } from 'react-router-dom'
 import qs from 'query-string'
 import './shoes-page.styles.scss'
-import { changeFilterSorter } from '../../redux/filter-sorter/filter-sorter.actions'
+import { changeFilterSorter, clearFilterSorter } from '../../redux/filter-sorter/filter-sorter.actions'
 
-const ShoesPage = ({ changeFilterSorter, collectionItems,
+const ShoesPage = ({ changeFilterSorter, clearFilterSorter, collectionItems,
     setCollectionItems, filterSorterParams }) => {
     const history = useHistory();
     const params = useParams();
 
     const getFilterSorterParams = () => {
-        const filterSorterParams = qs.parse(history.location.search, { ignoreQueryPrefix: true })
+        let searchString = history.location.search;
+
+        const filterSorterParams = qs.parse(searchString, { ignoreQueryPrefix: true })
         console.log("filterSorterParams search", filterSorterParams)
 
         for (let filterItemName in filterSorterParams) {
@@ -30,7 +32,9 @@ const ShoesPage = ({ changeFilterSorter, collectionItems,
     }
 
     useEffect(() => {
-        changeFilterSorter(getFilterSorterParams())
+        const filterSorterParams = getFilterSorterParams()
+        console.log('getFilterSorterParams...', filterSorterParams)
+        changeFilterSorter(filterSorterParams)
     }, [])
 
     const getSearchString = (filterSorterParams) => {
@@ -49,30 +53,37 @@ const ShoesPage = ({ changeFilterSorter, collectionItems,
                 }
             }
         }
-        return search
+        return search === '?' ? '' : search;
     }
+    useEffect(() => {
+        const search = getSearchString(filterSorterParams);
+        history.replace(history.location.pathname + search)
+    }, [filterSorterParams])
 
     useEffect(() => {
-        // fetchProducts({ sex, category, search: history.location.search }).then(data => {
-        //     setCollectionItems(data);
-        // })
-
         clearTimeout(window.timeOutIdfetchProducts);
 
-        const search = getSearchString(filterSorterParams)
-        history.replace(history.location.pathname + search)
+        const search = getSearchString(filterSorterParams);
 
+        console.log('history.location.search', '..' + history.location.search + '..');
+        console.log('search', '..' + search + '..');
+
+        if (history.location.search !== search) {
+
+            changeFilterSorter(getFilterSorterParams())
+            // clearFilterSorter();
+        }
         window.timeOutIdfetchProducts = setTimeout(() => {
             const { sex, category } = params;
             fetchProducts({ sex, category, search }).then(data => {
                 setCollectionItems(data)
             })
-        }, 1000);
+        }, 500);
 
         return () => {
             clearTimeout(window.timeOutIdfetchProducts);
         }
-    }, [filterSorterParams])
+    }, [params])
 
     return (
         <section className="shoes-page">
@@ -92,8 +103,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
     changeFilterSorter: (value) => dispatch(changeFilterSorter(value)),
-
-    setCollectionItems: (items) => dispatch(setCollectionItems(items))
+    setCollectionItems: (items) => dispatch(setCollectionItems(items)),
+    clearFilterSorter: () => dispatch(clearFilterSorter()),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ShoesPage)

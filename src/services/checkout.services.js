@@ -1,6 +1,6 @@
 import userServices from "./user.services";
 import { toast } from "react-toastify";
-const www = 'http://localhost:5001';
+import www from "./rotwww";
 const getHeaders = () => ({
     'Accept': 'application/json',
     'Content-Type': 'application/json',
@@ -9,7 +9,7 @@ const getHeaders = () => ({
 
 
 const checkoutWithNewUser = (data, signUpOption) => {
-    const url = `${www}/api/checkout/cart`;
+    const url = `${www}/checkout/cart`;
     return fetch(url, {
         method: 'POST',
         headers: {
@@ -30,7 +30,7 @@ const checkoutWithNewUser = (data, signUpOption) => {
 
 const checkoutWithUserAuthenticated = (data) => {
     console.log(data)
-    const url = `${www}/api/checkout/basket`;
+    const url = `${www}/checkout/basket`;
     return fetch(url, {
         method: 'POST',
         headers: getHeaders(),
@@ -42,7 +42,7 @@ const checkoutWithUserAuthenticated = (data) => {
 };
 
 const getOrders = () => {
-    const url = `${www}/api/checkout/orders`;
+    const url = `${www}/checkout/orders`;
     return fetch(url, {
         method: 'GET',
         headers: getHeaders()
